@@ -1,0 +1,11 @@
+#!/bin/bash -eu
+
+URL=https://raw.githubusercontent.com/dnerdy/args/master/args
+INSTALLDIR=/usr/local/bin
+DEST="$INSTALLDIR"/args
+
+set -x
+
+mkdir -p "$INSTALLDIR"
+curl "$URL" > "$DEST"
+chmod +x "$DEST"
