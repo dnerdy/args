@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+########## # Text color
+FG=0       # Black
+
+########## # Background color for commands
+BG_CMD=10  # Bright green
+
+########## # Background color for args
+BG_ARG=14  # Bright cyan
+
+echo -n "$(tput setaf $FG)$(tput setab $BG_CMD)$1$(tput sgr 0)"
+
+while [ $# -gt 1 ]; do
+    shift
+    echo -n " $(tput setaf $FG)$(tput setab $BG_ARG)$1$(tput sgr 0)"
+done
+
+echo
